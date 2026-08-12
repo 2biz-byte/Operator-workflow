@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 2,
+  "commandId": "cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
+  "trigger": "cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
+  "label": "Plan weekly stock-out restock",
+  "updatedAt": 1786537090027,
+  "nodes": [
+    {
+      "id": "slash:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
+      "kind": "slash",
+      "label": "Plan weekly stock-out restock",
+      "description": "Find SKUs likely to stock out this week and draft a reorder plan with supplier email drafts."
+    }
+  ],
+  "edges": [],
+  "relatedTodoIds": []
+}

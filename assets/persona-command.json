@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "kind": "persona_slash_command",
+  "pageId": "70e08a92-ef90-492a-bc7b-2f3b881af062",
+  "commandId": "cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
+  "operatorActionId": "6a7c642624720ba67d5a1182",
+  "commandLabel": "Plan weekly stock-out restock",
+  "commandDescription": "Find SKUs likely to stock out this week and draft a reorder plan with supplier email drafts.",
+  "personaRepository": {
+    "remoteUrl": "https://github.com/2biz-byte/persona-meridian.git",
+    "defaultBranch": "main",
+    "configPath": "assets/chat-config.json",
+    "owns": [
+      "command trigger",
+      "label and description",
+      "enabled state",
+      "presentation",
+      "Operator action reference"
+    ]
+  },
+  "workflowRepository": {
+    "remoteUrl": "https://github.com/2biz-byte/Operator-workflow.git",
+    "defaultBranch": "main",
+    "workflowPath": "assets/workflow.json",
+    "slashConnectionsPath": "assets/slash-connections.json",
+    "owns": [
+      "executable workflow steps",
+      "prompts and runtime configuration",
+      "inputs and outputs",
+      "generated child skills",
+      "slash connection debug graph",
+      "persona-command authoring skill"
+    ]
+  }
+}

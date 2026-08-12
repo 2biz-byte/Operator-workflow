@@ -1,0 +1,30 @@
+{
+  "actionId": "6a7c642624720ba67d5a1182",
+  "structure": {
+    "name": "Plan weekly stock-out restock",
+    "actionName": "Plan weekly stock-out restock",
+    "actionIndex": 1,
+    "baseUrl": "",
+    "screenshotEnabled": false,
+    "parameters": {
+      "execute": []
+    },
+    "groups": [],
+    "steps": [
+      {
+        "step_number": 1,
+        "stepId": "step-a0001",
+        "action_type": "navigate",
+        "label": "Workflow Start",
+        "intent": "**Input:** Uses the persona command invocation context; no prior step variables are required.\n\n**Processing:** Initializes the Operator workflow context so the following compatibility action can delegate to the persona runtime.\n\n**Output:** No exported variables. The step succeeds when the workflow context is ready.",
+        "comment": "Initialize the Operator workflow context.",
+        "url": "",
+        "value": "",
+        "selectors": [],
+        "disableBrowser": true,
+        "timestamp": 1786536998771
+      }
+    ]
+  },
+  "commitMessage": "Initial migration from database"
+}
