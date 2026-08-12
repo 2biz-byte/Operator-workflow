@@ -1,0 +1,141 @@
+{
+  "actionId": "6a7c642624720ba67d5a1182",
+  "structure": {
+    "name": "Plan weekly stock-out restock",
+    "actionName": "Plan weekly stock-out restock",
+    "actionIndex": 1,
+    "baseUrl": "",
+    "screenshotEnabled": false,
+    "parameters": {
+      "execute": []
+    },
+    "groups": [],
+    "steps": [
+      {
+        "step_number": 1,
+        "stepId": "step-a0001",
+        "action_type": "navigate",
+        "label": "Workflow Start",
+        "intent": "**Input:** Uses the persona command invocation context; no prior step variables are required.\n\n**Processing:** Initializes the Operator workflow context so the following compatibility action can delegate to the persona runtime.\n\n**Output:** No exported variables. The step succeeds when the workflow context is ready.",
+        "comment": "Initialize the Operator workflow context.",
+        "url": "",
+        "value": "",
+        "selectors": [],
+        "disableBrowser": true,
+        "timestamp": 1786536998771
+      },
+      {
+        "step_number": 2,
+        "stepId": "step-a0002",
+        "action_type": "mcp_tool",
+        "label": "Scan Shopify Inventory",
+        "intent": "**Input:** Shopify store connection context.\n\n**Processing:** Scans Shopify on-hand inventory levels to identify SKUs likely to stock out this week.\n\n**Output:** Inventory levels and list of identified at-risk SKUs.",
+        "mcpServerId": "SHOPIFY",
+        "userPrompt": "Read Shopify on-hand inventory and identify all SKUs at risk of stocking out within the week.",
+        "timestamp": 1786536998772
+      },
+      {
+        "step_number": 3,
+        "stepId": "step-a0003",
+        "action_type": "confirmation",
+        "label": "Approve Inventory Scan & Transition",
+        "intent": "**Input:** Identified at-risk SKUs from Step 2.\n\n**Processing:** Pauses execution for human approval before advancing pipeline 70e08a92-ef90-492a-bc7b-2f3b881af062 to target state inventory_ready.\n\n**Output:** Human approval decision.",
+        "userPrompt": "Please review the identified at-risk SKUs from the Shopify inventory scan. Confirm to approve pipeline transition (pipelineId: 70e08a92-ef90-492a-bc7b-2f3b881af062) to target state inventory_ready.",
+        "timestamp": 1786536998773
+      },
+      {
+        "step_number": 4,
+        "stepId": "step-a0004",
+        "action_type": "mcp_tool",
+        "label": "Pipeline Transition - inventory_ready",
+        "intent": "**Input:** Approved inventory scan from Step 3.\n\n**Processing:** Advances pipeline 70e08a92-ef90-492a-bc7b-2f3b881af062 to target state inventory_ready.\n\n**Output:** Transition status.",
+        "userPrompt": "Execute pipeline_transition for pipelineId 70e08a92-ef90-492a-bc7b-2f3b881af062 to target state inventory_ready.",
+        "timestamp": 1786536998774
+      },
+      {
+        "step_number": 5,
+        "stepId": "step-a0005",
+        "action_type": "mcp_tool",
+        "label": "Calculate Sales Forecast Reorder Quantities",
+        "intent": "**Input:** At-risk SKUs from Step 2 and Google Sheets sales forecast.\n\n**Processing:** Reads the Google Sheets sell-through / sales forecast and calculates recommended reorder quantities for the at-risk SKUs.\n\n**Output:** Recommended reorder quantities per SKU.",
+        "mcpServerId": "GOOGLESHEETS",
+        "userPrompt": "Read the Google Sheets sell-through and sales forecast data. Calculate the recommended reorder quantities for the identified at-risk SKUs.",
+        "timestamp": 1786536998775
+      },
+      {
+        "step_number": 6,
+        "stepId": "step-a0006",
+        "action_type": "confirmation",
+        "label": "Approve Sales Forecast & Transition",
+        "intent": "**Input:** Recommended reorder quantities from Step 5.\n\n**Processing:** Pauses execution for human approval before advancing pipeline 70e08a92-ef90-492a-bc7b-2f3b881af062 to target state forecast_ready.\n\n**Output:** Human approval decision.",
+        "userPrompt": "Please review the calculated sales forecast and recommended reorder quantities for at-risk SKUs. Confirm to approve pipeline transition (pipelineId: 70e08a92-ef90-492a-bc7b-2f3b881af062) to target state forecast_ready.",
+        "timestamp": 1786536998776
+      },
+      {
+        "step_number": 7,
+        "stepId": "step-a0007",
+        "action_type": "mcp_tool",
+        "label": "Pipeline Transition - forecast_ready",
+        "intent": "**Input:** Approved reorder calculations from Step 6.\n\n**Processing:** Advances pipeline 70e08a92-ef90-492a-bc7b-2f3b881af062 to target state forecast_ready.\n\n**Output:** Transition status.",
+        "userPrompt": "Execute pipeline_transition for pipelineId 70e08a92-ef90-492a-bc7b-2f3b881af062 to target state forecast_ready.",
+        "timestamp": 1786536998777
+      },
+      {
+        "step_number": 8,
+        "stepId": "step-a0008",
+        "action_type": "mcp_tool",
+        "label": "Create Supplier Email Drafts in Gmail",
+        "intent": "**Input:** Recommended reorder plan from Step 5.\n\n**Processing:** Creates supplier email DRAFTS in Gmail for each at-risk SKU reorder. Never sends supplier emails and never places purchase orders.\n\n**Output:** Draft email IDs and content summaries.",
+        "mcpServerId": "GMAIL",
+        "userPrompt": "Create supplier email DRAFTS using Gmail for each recommended SKU reorder based on the forecast. DO NOT send any emails and DO NOT place purchase orders — only save email drafts.",
+        "timestamp": 1786536998778
+      },
+      {
+        "step_number": 9,
+        "stepId": "step-a0009",
+        "action_type": "confirmation",
+        "label": "Approve Supplier Drafts & Transition",
+        "intent": "**Input:** Created supplier email drafts from Step 8.\n\n**Processing:** Pauses execution for human approval before advancing pipeline 70e08a92-ef90-492a-bc7b-2f3b881af062 to target state drafts_ready.\n\n**Output:** Human approval decision.",
+        "userPrompt": "Please review the created supplier email drafts in Gmail. Confirm to approve pipeline transition (pipelineId: 70e08a92-ef90-492a-bc7b-2f3b881af062) to target state drafts_ready.",
+        "timestamp": 1786536998779
+      },
+      {
+        "step_number": 10,
+        "stepId": "step-a000a",
+        "action_type": "mcp_tool",
+        "label": "Pipeline Transition - drafts_ready",
+        "intent": "**Input:** Approved draft emails from Step 9.\n\n**Processing:** Advances pipeline 70e08a92-ef90-492a-bc7b-2f3b881af062 to target state drafts_ready.\n\n**Output:** Transition status.",
+        "userPrompt": "Execute pipeline_transition for pipelineId 70e08a92-ef90-492a-bc7b-2f3b881af062 to target state drafts_ready.",
+        "timestamp": 1786536998780
+      },
+      {
+        "step_number": 11,
+        "stepId": "step-a000b",
+        "action_type": "api_output",
+        "label": "Export Final Restock Plan & Draft Information",
+        "intent": "**Input:** Reorder plan from Step 5 and Gmail drafts from Step 8.\n\n**Processing:** Packages the final SKU reorder plan and supplier email draft details into the standard output schema.\n\n**Output:** Final structured JSON output containing result, summary, and metadata.",
+        "outputName": "reorderPlan",
+        "outputSchema": "{\"type\":\"object\",\"properties\":{\"result\":{\"type\":\"object\"},\"summary\":{\"type\":\"string\"},\"metadata\":{\"type\":\"object\"}}}",
+        "outputFields": [
+          {
+            "key": "result",
+            "value": "{{step-a0005.response}}",
+            "type": "object"
+          },
+          {
+            "key": "summary",
+            "value": "Stock-out restock plan complete. Reorder quantities calculated and supplier email drafts created in Gmail.",
+            "type": "string"
+          },
+          {
+            "key": "metadata",
+            "value": "{\"pipelineId\":\"70e08a92-ef90-492a-bc7b-2f3b881af062\",\"status\":\"drafts_ready\",\"emailDrafts\":\"{{step-a0008.response}}\"}",
+            "type": "object"
+          }
+        ],
+        "timestamp": 1786536998781
+      }
+    ]
+  },
+  "commitMessage": "Implement Meridian /plan-restock workflow"
+}
