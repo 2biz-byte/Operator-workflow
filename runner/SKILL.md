@@ -1,6 +1,7 @@
 ---
 name: plan-weekly-stock-out-restock-runner
 description: Run the "Plan weekly stock-out restock" action through the automation API and poll run status.
+
 ---
 
 # Plan weekly stock-out restock Runner
@@ -78,3 +79,14 @@ POST https://gabrieloperator.com/api/automation/resume/{runId}
 { "agentId": "70e08a92-ef90-492a-bc7b-2f3b881af062", "actionId": "6a7c642624720ba67d5a1182" }
 ```
 
+## Key Learnings
+- The run completed 11 steps in 3.5 seconds with 0 failures, indicating a fast, linear workflow.
+- Multiple MCP tool execution errors (missing server URL or ID) were logged but did not cause the run to fail, suggesting automatic retry or non‑critical handling.
+- Interactive step recovery was disabled for this run, yet no pauses occurred, implying approvals were handled automatically or the run never entered a paused state.
+- Reliable selectors were the `label` attributes (e.g., “Workflow Start”, “Approve Inventory Scan & Transition”, “Create Supplier Email Drafts in Gmail”), which consistently triggered the correct actions.
+- Typical per‑step timing was ≈0.3 s; no significant delays were observed.
+- Recovery pattern: warnings indicated “MCP tool execution completed with errors”, but the run continued; ensure MCP server URL configuration is correct to avoid these warnings.
+
+## Run History
+- Run: 5d7ff8ff Date: 2026-08-12 Status: completed
+  Steps: 11 passed, 0 failed Duration: 3.5s
