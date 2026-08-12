@@ -3,7 +3,7 @@
   "commandId": "cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
   "trigger": "plan-restock",
   "label": "Plan weekly stock-out restock",
-  "updatedAt": 1786544926218,
+  "updatedAt": 1786546979219,
   "nodes": [
     {
       "id": "slash:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
@@ -25,7 +25,7 @@
         "stepNumber": 2,
         "stepId": "step-a0002",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "4e40eb234ca73ef25980af21d92c95c85dc20e27"
+        "repositoryHead": "971c4f45620f6e287f987e94b5a1542c6e84ccea"
       }
     },
     {
@@ -38,7 +38,7 @@
         "stepNumber": 3,
         "stepId": "step-a0003",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "4e40eb234ca73ef25980af21d92c95c85dc20e27"
+        "repositoryHead": "971c4f45620f6e287f987e94b5a1542c6e84ccea"
       }
     },
     {
@@ -51,7 +51,7 @@
         "stepNumber": 4,
         "stepId": "step-a0004",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "4e40eb234ca73ef25980af21d92c95c85dc20e27"
+        "repositoryHead": "971c4f45620f6e287f987e94b5a1542c6e84ccea"
       }
     },
     {
@@ -64,7 +64,7 @@
         "stepNumber": 5,
         "stepId": "step-a0005",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "4e40eb234ca73ef25980af21d92c95c85dc20e27"
+        "repositoryHead": "971c4f45620f6e287f987e94b5a1542c6e84ccea"
       }
     },
     {
@@ -77,7 +77,7 @@
         "stepNumber": 6,
         "stepId": "step-a0006",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "4e40eb234ca73ef25980af21d92c95c85dc20e27"
+        "repositoryHead": "971c4f45620f6e287f987e94b5a1542c6e84ccea"
       }
     },
     {
@@ -90,7 +90,7 @@
         "stepNumber": 7,
         "stepId": "step-a0007",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "4e40eb234ca73ef25980af21d92c95c85dc20e27"
+        "repositoryHead": "971c4f45620f6e287f987e94b5a1542c6e84ccea"
       }
     },
     {
@@ -103,7 +103,7 @@
         "stepNumber": 8,
         "stepId": "step-a0008",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "4e40eb234ca73ef25980af21d92c95c85dc20e27"
+        "repositoryHead": "971c4f45620f6e287f987e94b5a1542c6e84ccea"
       }
     },
     {
@@ -116,7 +116,7 @@
         "stepNumber": 9,
         "stepId": "step-a0009",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "4e40eb234ca73ef25980af21d92c95c85dc20e27"
+        "repositoryHead": "971c4f45620f6e287f987e94b5a1542c6e84ccea"
       }
     },
     {
@@ -129,7 +129,7 @@
         "stepNumber": 10,
         "stepId": "step-a000a",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "4e40eb234ca73ef25980af21d92c95c85dc20e27"
+        "repositoryHead": "971c4f45620f6e287f987e94b5a1542c6e84ccea"
       }
     },
     {
@@ -142,7 +142,7 @@
         "stepNumber": 11,
         "stepId": "step-a000b",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "4e40eb234ca73ef25980af21d92c95c85dc20e27"
+        "repositoryHead": "971c4f45620f6e287f987e94b5a1542c6e84ccea"
       }
     }
   ],
