@@ -133,7 +133,9 @@
             "type": "object"
           }
         ],
-        "timestamp": 1786536998781
+        "timestamp": 1786536998781,
+        "exportedVariables": {},
+        "exportedVariableDescriptions": {}
       }
     ]
   },
