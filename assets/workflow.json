@@ -36,17 +36,6 @@
       },
       {
         "step_number": 3,
-        "stepId": "step-msq6quvv47d3d",
-        "action_type": "mcp_tool",
-        "label": "Scan Shopify Inventory (copy)",
-        "intent": "**Input:** Shopify store connection context.\n\n**Processing:** Scans Shopify on-hand inventory levels to identify SKUs likely to stock out this week.\n\n**Output:** Inventory levels and list of identified at-risk SKUs.",
-        "mcpServerId": "SHOPIFY",
-        "userPrompt": "Read Shopify on-hand inventory and identify all SKUs at risk of stocking out within the week.",
-        "timestamp": 1786544966875,
-        "skipStep": false
-      },
-      {
-        "step_number": 4,
         "stepId": "step-a0003",
         "action_type": "confirmation",
         "label": "Approve Inventory Scan & Transition",
@@ -55,7 +44,7 @@
         "timestamp": 1786536998773
       },
       {
-        "step_number": 5,
+        "step_number": 4,
         "stepId": "step-a0004",
         "action_type": "mcp_tool",
         "label": "Pipeline Transition - inventory_ready",
@@ -64,7 +53,7 @@
         "timestamp": 1786536998774
       },
       {
-        "step_number": 6,
+        "step_number": 5,
         "stepId": "step-a0005",
         "action_type": "mcp_tool",
         "label": "Calculate Sales Forecast Reorder Quantities",
@@ -74,7 +63,7 @@
         "timestamp": 1786536998775
       },
       {
-        "step_number": 7,
+        "step_number": 6,
         "stepId": "step-a0006",
         "action_type": "confirmation",
         "label": "Approve Sales Forecast & Transition",
@@ -83,7 +72,7 @@
         "timestamp": 1786536998776
       },
       {
-        "step_number": 8,
+        "step_number": 7,
         "stepId": "step-a0007",
         "action_type": "mcp_tool",
         "label": "Pipeline Transition - forecast_ready",
@@ -92,7 +81,7 @@
         "timestamp": 1786536998777
       },
       {
-        "step_number": 9,
+        "step_number": 8,
         "stepId": "step-a0008",
         "action_type": "mcp_tool",
         "label": "Create Supplier Email Drafts in Gmail",
@@ -102,7 +91,7 @@
         "timestamp": 1786536998778
       },
       {
-        "step_number": 10,
+        "step_number": 9,
         "stepId": "step-a0009",
         "action_type": "confirmation",
         "label": "Approve Supplier Drafts & Transition",
@@ -111,7 +100,7 @@
         "timestamp": 1786536998779
       },
       {
-        "step_number": 11,
+        "step_number": 10,
         "stepId": "step-a000a",
         "action_type": "mcp_tool",
         "label": "Pipeline Transition - drafts_ready",
@@ -120,7 +109,7 @@
         "timestamp": 1786536998780
       },
       {
-        "step_number": 12,
+        "step_number": 11,
         "stepId": "step-a000b",
         "action_type": "api_output",
         "label": "Export Final Restock Plan & Draft Information",
