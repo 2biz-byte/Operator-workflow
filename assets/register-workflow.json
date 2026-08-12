@@ -1,16 +1,16 @@
 {
   "actionId": "6a7c642624720ba67d5a1182",
   "structure": {
-    "name": "Plan weekly stock-out restock",
-    "actionName": "Plan weekly stock-out restock",
-    "actionIndex": 1,
-    "baseUrl": "",
-    "screenshotEnabled": false,
+    "name": "register authentication",
+    "steps": [],
     "parameters": {
       "execute": []
     },
-    "groups": [],
-    "steps": []
+    "baseUrl": "",
+    "actionIndex": 0,
+    "actionName": "register authentication",
+    "screenshotEnabled": false,
+    "groups": []
   },
-  "commitMessage": "Initial register auth sidecar"
+  "commitMessage": ""
 }
