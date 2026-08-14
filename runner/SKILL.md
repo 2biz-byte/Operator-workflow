@@ -80,17 +80,18 @@ POST https://gabrieloperator.com/api/automation/resume/{runId}
 ```
 
 ## Key Learnings
-- Workflow consistently follows an 11-step sequence; execution times are stable at approximately 2.8s.
+- Workflow consistently follows an 11-step sequence; execution times have slightly increased to ~3.1s.
 - MCP tool execution frequently logs "Could not resolve MCP server URL" or "MCP server URL or ID is required" errors; these remain non-critical and do not halt the workflow.
 - Interactive confirmation checkpoints at steps 3, 6, and 9 are the primary structural bottlenecks requiring manual approval.
 - Browser cleanup (null reference on close) is a persistent, non-critical diagnostic warning that can be ignored.
 - The pipeline remains resilient, successfully completing despite consistent MCP resolution warnings occurring across almost all tool-based steps.
 
 ## Run History
-- Run: 9d8623cd Date: 2026-08-14 Status: completed
 - Run: 72a4ff7b Date: 2026-08-14 Status: completed
   Steps: 11 passed, 0 failed Duration: 2.8s
 - Run: 6bfae1 Date: 2026-08-14 Status: completed
 - Run: 5a77aaec Date: 2026-08-14 Status: 
 - Run: a677afb5 Date: 2026-08-14 Status: completed
   Steps: 11 passed, 0 failed Duration: 2.8s
+- Run: 3f2cae44 Date: 2026-08-14 Status: completed
+  Steps: 11 passed,
