@@ -87,12 +87,12 @@ POST https://gabrieloperator.com/api/automation/resume/{runId}
 - The pipeline remains resilient, successfully completing despite consistent MCP resolution warnings occurring across almost all tool-based steps.
 
 ## Run History
-- Run: b1673315 Date: 2026-08-14 Status: completed
-  Steps: 11 passed, 0 failed Duration: 2.3s
 - Run: b1b82bba Date: 2026-08-14 Status: completed
   Steps: 11 passed, 0 failed Duration: 
 - Run: 9d8623cd Date: 2026-08-14 Status: completed
   Steps: 
 - Run: 72a4ff7b Date: 2026-08-14 Status: completed
   Steps: 11 passed, 0 failed Duration: 2.8s
-- Run: 6bfae1
+- Run: 6bfae1 Date: 2026-08-14 Status: completed
+  Steps: 
+- Run: 5a77aaec Date: 2026-08-14 Status:
