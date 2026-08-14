@@ -3,7 +3,7 @@
   "commandId": "cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
   "trigger": "plan-restock",
   "label": "Plan weekly stock-out restock",
-  "updatedAt": 1786546976193,
+  "updatedAt": 1786707799368,
   "nodes": [
     {
       "id": "slash:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
@@ -16,79 +16,81 @@
       }
     },
     {
-      "id": "step:step-a0001",
-      "kind": "step",
-      "label": "Canvas Agent",
-      "description": "Initialize browserless Operator context",
-      "meta": {
-        "stepId": "step-a0001",
-        "actionType": "navigate"
-      }
-    },
-    {
-      "id": "step:step-a0002",
-      "kind": "step",
+      "id": "canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:read_inventory",
+      "kind": "canvas_task",
       "label": "Shopify . read_inventory",
-      "description": "Read inventory and find at-risk SKUs",
+      "description": "Canvas task",
       "meta": {
+        "taskId": "read_inventory",
+        "actionType": "persona_capability",
+        "capabilityKind": "canvas_task_execution",
+        "stepNumber": 2,
         "stepId": "step-a0002",
-        "actionType": "persona_capability",
-        "kind": "canvas_task_execution",
-        "pipelineId": "pl_1ba2b6fe2636",
-        "transitionId": "stage_z4ump26__default"
+        "actionId": "6a7c642624720ba67d5a1182",
+        "repositoryHead": "3f5083cd7cadb2f85653de473d8f95f9e7ac013d",
+        "executionType": "pipeline_transition",
+        "requiresApproval": true
       }
     },
     {
-      "id": "step:step-a0003",
-      "kind": "step",
+      "id": "canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:forecast_sales",
+      "kind": "canvas_task",
       "label": "Sheets . forecast_sales",
-      "description": "Forecast sales and calculate reorder quantities",
+      "description": "Canvas task",
       "meta": {
-        "stepId": "step-a0003",
+        "taskId": "forecast_sales",
         "actionType": "persona_capability",
-        "kind": "canvas_task_execution",
-        "pipelineId": "pl_1ba2b6fe2636",
-        "transitionId": "stage_94vdup9__default"
+        "capabilityKind": "canvas_task_execution",
+        "stepNumber": 3,
+        "stepId": "step-a0003",
+        "actionId": "6a7c642624720ba67d5a1182",
+        "repositoryHead": "3f5083cd7cadb2f85653de473d8f95f9e7ac013d",
+        "executionType": "pipeline_transition",
+        "requiresApproval": true,
+        "dependsOn": [
+          "read_inventory"
+        ]
       }
     },
     {
-      "id": "step:step-a0004",
-      "kind": "step",
+      "id": "canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:draft_supplier_email",
+      "kind": "canvas_task",
       "label": "Gmail . draft_supplier_email",
-      "description": "Draft supplier reorder emails in Gmail",
+      "description": "Canvas task",
       "meta": {
-        "stepId": "step-a0004",
+        "taskId": "draft_supplier_email",
         "actionType": "persona_capability",
-        "kind": "canvas_task_execution",
-        "pipelineId": "pl_1ba2b6fe2636",
-        "transitionId": "stage_501w69i__default"
+        "capabilityKind": "canvas_task_execution",
+        "stepNumber": 4,
+        "stepId": "step-a0004",
+        "actionId": "6a7c642624720ba67d5a1182",
+        "repositoryHead": "3f5083cd7cadb2f85653de473d8f95f9e7ac013d",
+        "executionType": "pipeline_transition",
+        "requiresApproval": true,
+        "dependsOn": [
+          "forecast_sales"
+        ]
       }
     }
   ],
   "edges": [
     {
-      "id": "edge:slash:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:step:step-a0001",
+      "id": "edge:slash:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:executes:canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:read_inventory:1",
       "source": "slash:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
-      "target": "step:step-a0001",
-      "relation": "triggers"
+      "target": "canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:read_inventory",
+      "relation": "executes"
     },
     {
-      "id": "edge:step:step-a0001:step:step-a0002",
-      "source": "step:step-a0001",
-      "target": "step:step-a0002",
-      "relation": "next"
+      "id": "edge:canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:read_inventory:depends_on:canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:forecast_sales:2",
+      "source": "canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:read_inventory",
+      "target": "canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:forecast_sales",
+      "relation": "depends_on"
     },
     {
-      "id": "edge:step:step-a0002:step:step-a0003",
-      "source": "step:step-a0002",
-      "target": "step:step-a0003",
-      "relation": "next"
-    },
-    {
-      "id": "edge:step:step-a0003:step:step-a0004",
-      "source": "step:step-a0003",
-      "target": "step:step-a0004",
-      "relation": "next"
+      "id": "edge:canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:forecast_sales:depends_on:canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:draft_supplier_email:3",
+      "source": "canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:forecast_sales",
+      "target": "canvas:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898:draft_supplier_email",
+      "relation": "depends_on"
     }
   ],
   "relatedTodoIds": []
