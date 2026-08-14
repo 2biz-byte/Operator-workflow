@@ -33,6 +33,7 @@
         "personaCapabilityConfig": {
           "schemaVersion": 1,
           "kind": "canvas_task_execution",
+          "promptTemplate": "Find SKUs likely to stock out this week and draft a reorder plan with supplier email drafts. {args}",
           "execution": {
             "type": "canvas_task_execution",
             "canvas": {
@@ -83,6 +84,7 @@
         "personaCapabilityConfig": {
           "schemaVersion": 1,
           "kind": "canvas_task_execution",
+          "promptTemplate": "Find SKUs likely to stock out this week and draft a reorder plan with supplier email drafts. {args}",
           "execution": {
             "type": "canvas_task_execution",
             "canvas": {
@@ -136,6 +138,7 @@
         "personaCapabilityConfig": {
           "schemaVersion": 1,
           "kind": "canvas_task_execution",
+          "promptTemplate": "Find SKUs likely to stock out this week and draft a reorder plan with supplier email drafts. {args}",
           "execution": {
             "type": "canvas_task_execution",
             "canvas": {
@@ -244,5 +247,5 @@
       }
     ]
   },
-  "commitMessage": "Fix /plan-restock as Canvas pipeline_transition agent"
+  "commitMessage": "Add Canvas promptTemplate so /plan-restock can launch with empty args"
 }
