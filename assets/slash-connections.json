@@ -3,7 +3,7 @@
   "commandId": "cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
   "trigger": "plan-restock",
   "label": "Plan weekly stock-out restock",
-  "updatedAt": 1786696878461,
+  "updatedAt": 1786696878990,
   "nodes": [
     {
       "id": "slash:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
