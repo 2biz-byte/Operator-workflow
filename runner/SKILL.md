@@ -80,14 +80,14 @@ POST https://gabrieloperator.com/api/automation/resume/{runId}
 ```
 
 ## Key Learnings
-- The run completed 11 steps in 5.0 seconds. While the run was successful, frequent MCP tool errors regarding missing server URLs or IDs occurred, suggesting a need for configuration verification.
-- Despite "MCP tool execution failed" errors, the workflow continued execution, indicating that these errors are non-blocking for the overall pipeline.
-- Interactive confirmations (Approve Inventory Scan, Sales Forecast, Supplier Drafts) remain reliable checkpoints in the workflow.
-- Browser close failures at the end of the run are becoming a frequent pattern, though they do not affect the final status of the automation.
-- Ensure MCP server configuration is consistent to reduce warning logs, even if the workflow currently recovers automatically.
+- The workflow consistently completes 11 steps; recent durations show optimization (3.2s to 5.0s).
+- MCP tool execution failures ("Could not resolve MCP server URL" or "MCP server URL or ID is required") remain non-blocking, though they appear in almost every step log.
+- Interactive checkpoints (Inventory Scan, Sales Forecast, Supplier Drafts) are consistently reliable despite underlying MCP configuration warnings.
+- Browser cleanup (close) failures continue to appear in logs; these are non-fatal and do not prevent successful workflow termination.
+- Ongoing MCP configuration instability does not currently impede successful automation completion or API output delivery.
 
 ## Run History
-- Run: 5d7ff8ff Date: 2026-08-12 Status: completed
-  Steps: 11 passed, 0 failed Duration: 3.5s
 - Run: 3769b4b0 Date: 2026-08-14 Status: completed
   Steps: 11 passed, 0 failed Duration: 5.0s
+- Run: 33c3b703 Date: 2026-08-14 Status: completed
+  Steps: 11 passed, 0 failed Duration: 3.2s
