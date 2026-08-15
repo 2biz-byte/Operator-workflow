@@ -3,7 +3,7 @@
   "commandId": "cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
   "trigger": "plan-restock",
   "label": "Plan weekly stock-out restock",
-  "updatedAt": 1786756186806,
+  "updatedAt": 1786787814518,
   "nodes": [
     {
       "id": "slash:cmd_5d98ca9a-51e8-417f-a14e-827103b8e898",
@@ -27,7 +27,7 @@
         "stepNumber": 2,
         "stepId": "step-a0002",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "94dbf1b69494c5621a059650f66818c9c57de81f",
+        "repositoryHead": "9dcf5f323c1c9c36aaf9dde9848360fbffe921a0",
         "executionType": "pipeline_transition",
         "requiresApproval": true
       }
@@ -44,7 +44,7 @@
         "stepNumber": 3,
         "stepId": "step-a0003",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "94dbf1b69494c5621a059650f66818c9c57de81f",
+        "repositoryHead": "9dcf5f323c1c9c36aaf9dde9848360fbffe921a0",
         "executionType": "pipeline_transition",
         "requiresApproval": true,
         "dependsOn": [
@@ -64,7 +64,7 @@
         "stepNumber": 4,
         "stepId": "step-a0004",
         "actionId": "6a7c642624720ba67d5a1182",
-        "repositoryHead": "94dbf1b69494c5621a059650f66818c9c57de81f",
+        "repositoryHead": "9dcf5f323c1c9c36aaf9dde9848360fbffe921a0",
         "executionType": "pipeline_transition",
         "requiresApproval": true,
         "dependsOn": [
